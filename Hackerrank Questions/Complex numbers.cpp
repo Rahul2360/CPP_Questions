@@ -32,6 +32,54 @@ class Complex
 	 Complex operator*(Complex&);
  	friend Complex operator/(Complex&,Complex&);
 };
+Complex::Complex()
+    {
+    real = 0.0;
+    imag = 0.0;
+}
+Complex::Complex(double a,double b)
+    {
+    real = a;
+    imag = b;
+}
+void Complex::getComplexNumber()
+    {
+    cin >> real >> imag;
+}
+void Complex::DisplayComplexNumber()
+    {
+    std::cout << std::fixed;
+    std::cout << std::setprecision(2);
+    cout << real << "+" << imag << "i" << endl;
+}
+Complex Complex::operator + (Complex&sum)
+    {
+    Complex addition;
+    addition.real = real + sum.real;
+    addition.imag = imag + sum.imag;
+    return addition;
+}
+Complex Complex::operator - (Complex&sub)
+    {
+    Complex subtraction;
+    subtraction.real = real - sub.real;
+    subtraction.imag = imag - sub.imag;
+    return subtraction;
+}
+Complex Complex::operator * (Complex&mul)
+    {
+    Complex multiply;
+    multiply.real = ((real*mul.real) - (imag*mul.imag));
+    multiply.imag = ((real*mul.imag) + (imag*mul.real));
+    return multiply;
+}
+Complex operator/(Complex&a,Complex&b)
+    {
+    Complex division;
+    division.real = (((a.real)*(b.real))+((a.imag)*(b.imag)))/((b.real*b.real) + (b.imag*b.imag));
+    division.imag = (((b.real)*(a.imag))-((a.real)*(b.imag)))/((b.real*b.real) + (b.imag*b.imag));
+    return division;
+}
 int main()
 {
 		Complex obj1,obj2,obj3;
