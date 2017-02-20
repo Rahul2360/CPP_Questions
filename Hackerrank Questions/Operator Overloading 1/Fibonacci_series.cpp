@@ -19,6 +19,24 @@ public:
     fibonacci operator ++();
     void display();
 };
+fibonacci::fibonacci()
+{
+    f0=1;
+    f1=1;
+    fib=1;
+}
+fibonacci fibonacci::operator ++()
+{
+    fib=f0+f1;
+    f1=f0;
+    f0=fib;
+    return *this;
+}
+void fibonacci::display()
+{
+    cout << fib << endl;
+}
+
 int main()
 {
     fibonacci obj;
