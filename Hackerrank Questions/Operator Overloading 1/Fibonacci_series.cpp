@@ -8,4 +8,26 @@ How many fibonaci number are to be displayed
 
 Sample Output
 1 2 3 5 8*/
+#include<iostream>
+using namespace std;
+class fibonacci
+{
+private:
+    long int f0,f1,fib;
+public:
+    fibonacci();
+    fibonacci operator ++();
+    void display();
+};
+int main()
+{
+    fibonacci obj;
+    int n;
+    cin >> n;
+    for(int i=0;i<n;i++)
+    {
+        obj.display();
+        ++obj;
+    }
+}
 
