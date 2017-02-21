@@ -21,3 +21,39 @@ subtraction of matrices
 The result is
 -5 -5
 -5 -5*/
+#include<iostream>
+using namespace std;
+class matrix
+{
+  private:
+   long m[10][10];
+  int row;int col;
+  public:void getdata();
+  int operator ==(matrix);
+  matrix operator+(matrix);
+  matrix operator-(matrix);
+  friend ostream & operator << (ostream &,matrix &);
+};
+int main()
+{
+  matrix m1,m2,m3,m4;
+
+  m1.getdata();
+  m2.getdata();
+  if(m1==m2)
+  {
+    m3=m1+m2;
+    m4=m1-m2;
+    cout<<"Addition of matrices\n";
+    cout<<"the result is\n";
+    cout<<m3;
+    cout<<"subtraction of matrices\n";
+    cout<<"The result is \n";
+    cout<<m4;
+  }
+  else
+  {
+    cout<<"order of the input matrices is not identical\n";
+  }
+
+}
