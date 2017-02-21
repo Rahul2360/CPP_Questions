@@ -34,6 +34,62 @@ class matrix
   matrix operator-(matrix);
   friend ostream & operator << (ostream &,matrix &);
 };
+void matrix::getdata()
+    {
+    cin >>row >> col;
+    for(int i=0;i<row;i++)
+        for(int j=0;j<col;j++)
+         cin >> m[i][j];
+}
+int matrix::operator == (matrix a)
+{
+    if(row==a.row && col==a.col){
+        return 1;
+    }
+    else
+        return 0;
+}
+matrix matrix::operator + (matrix b)
+    {
+    matrix temp;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            temp.m[i][j] = m[i][j]+b.m[i][j];
+        }
+    temp.row=row;
+    temp.col=col;
+    }
+    return temp;
+
+}
+matrix matrix::operator-(matrix c)
+    {
+   /* for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            m[i][j] = m[i][j]-c.m[i][j];
+        }}
+    return *this;*/
+    matrix temp;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            temp.m[i][j] = m[i][j]-c.m[i][j];
+        }
+    temp.row=row;
+    temp.col=col;
+    }
+    return temp;
+
+}
+ostream & operator << (ostream &l,matrix& p)
+    {
+   for(int i=0;i<p.row;i++){
+        for(int j=0;j<p.col;j++){
+           l<<p.m[i][j]<<" " ;
+        }
+   cout<<endl;
+   }
+return l;
+}
 int main()
 {
   matrix m1,m2,m3,m4;
