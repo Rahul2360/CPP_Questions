@@ -55,5 +55,27 @@ not divisible by 0 as division by zero is undefined; thus our count of evenly di
 using namespace std;
 int main()
 {
+    //write your code here
+    int t;
+    cin >> t;
+    for(int a0 = 0; a0 < t; a0++)
+    {
+        int n,count=0;
+        cin >> n;
+        int m;
+        m=n;
+        while(n!=0)
+            {
+            int rem;
+            rem=n%10;
+            if(rem!=0 && m%rem==0)
+            {
+                count++;
+                }
+           n=n/10;
+        }
+     cout << count << endl;
+        count=0;
+    }
     return 0;
 }
