@@ -29,3 +29,31 @@ The number 12 is broken into two digits, 1 and 2. When 12 is divided by either o
 remainder is 0 ; Thus the number of evenly-divisible digits in 12 is 2.
 The number 1012 is broken into four digits. 1,0,1 and 2. 1012 is evenly divisible by its digits 1,1,2. but it is
 not divisible by 0 as division by zero is undefined; thus our count of evenly divisible digits is 3.*/
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+int main()
+{
+    return 0;
+}
