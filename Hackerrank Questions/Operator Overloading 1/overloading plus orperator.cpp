@@ -38,6 +38,36 @@ public:
     friend MinMax operator+(const MinMax &cM, int nValue);
     friend MinMax operator+(int nValue, const MinMax &cM);
 };
+MinMax::MinMax()
+{
+    m_nMin=0;
+    m_nMax=0;
+}
+MinMax::MinMax(int nMin,int nMax)
+{
+    m_nMin=nMin;
+    m_nMax=nMax;
+}
+void MinMax::getdata()
+{
+    cin >> m_nMin >> m_nMax;
+}
+MinMax operator+(const MinMax &cM1, const MinMax &cM2)
+{
+    MinMax temp;
+    if(cM1.m_nMin >=cM2.m_nMax )
+        return temp.m_nMin ;
+    else
+        return temp.m_nMax ;
+}
+MinMax operator+(const MinMax &cM, int nValue)
+{
+
+}
+MinMax operator+(int nValue, const MinMax &cM)
+{
+
+}
 int main()
 {
     MinMax cM1,cM2,cM3;
