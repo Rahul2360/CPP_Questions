@@ -22,20 +22,7 @@ Sample output
 11:9:1996*/
 #include<iostream>
 using namespace std;
-class MyDate
-{
-	int day,month,year;
-	public:
-		MyDate();
-		MyDate operator +(int);//To add some integer in date
-		MyDate operator -(int); //To substract some integer from date;
-		friend bool operator >(MyDate&,MyDate&);//To compare two dates
-		MyDate operator ++(); //To increment date by 1
-		friend ostream& operator <<(ostream&,MyDate&);
-		friend istream& operator >>(istream&,MyDate&);
-		void display();
-		void getdate();
-};
+
 int main()
 {
 	MyDate date1,date2,date3;
