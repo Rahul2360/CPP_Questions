@@ -24,3 +24,21 @@ input for list 2
 38 21 67 34
 Sample output
 16 2 79 79*/
+#include<iostream>
+using namespace std;
+int size;
+class sample
+{
+public:
+long int *arr;
+friend sample operator +(sample ,sample);
+
+int main() {
+cin>>size;
+sample a1,a2,a3;
+//cin>>a1;
+//cin>>a2;
+a3=a1+a2;
+//cout<<a3;
+return 0;
+}
