@@ -26,19 +26,31 @@ Sample output
 16 2 79 79*/
 #include<iostream>
 using namespace std;
-int size;
+    int size;
 class sample
 {
 public:
-long int *arr;
-friend sample operator +(sample ,sample);
+    long int *arr;
+    friend sample operator +(sample s1 ,sample s2)
+    {
+        int i;
+        arr = new long int[size];
+        for(i=0;i<size;i++)
+            cin >> arr[i];
+        sample temp;
+        int i;
+        for(i=0;i<size;i++)
+            temp.arr[i]=s1.arr[i] +s2.arr[i];
+        return temp;
+    }
+};
 
 int main() {
-cin>>size;
-sample a1,a2,a3;
-//cin>>a1;
-//cin>>a2;
-a3=a1+a2;
-//cout<<a3;
-return 0;
+    cin>>size;
+    sample a1,a2,a3;
+    //cin>>a1;
+    //cin>>a2;
+    a3=a1+a2;
+    //cout<<a3;
+    return 0;
 }
