@@ -9,7 +9,15 @@ Sample Output:
 Tanmeet*/
 
 #include<iostream>
+#include<string.h>
 using namespace std;
+class String
+{
+    char name[30];
+public:
+    void getStr();
+    void showStr();
+};
 void String::getStr()
 {
     cin >> name;
