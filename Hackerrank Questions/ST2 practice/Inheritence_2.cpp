@@ -1,4 +1,4 @@
-A class bill is inherited by two classes cheque, cash in protected mode.
+/*A class bill is inherited by two classes cheque, cash in protected mode.
 bill class has two members item_price,qty.
 The product of the two, 1. price of the item and 2. quantity will give us the total bill.
 class cheque again has two members cheque_no, cheque_amt.
@@ -27,4 +27,52 @@ Sample Input 1:
 10 //notes of 10
 0 //notes of 1
 Sample Output 1:
-Clear
+Clear*/
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+using namespace std;
+class bill
+{
+	protected:
+		int item_price,qty,bill;
+	public:
+		void get_bill();
+};
+int main()
+{
+	int n;
+	cin>>n;
+	if(n==1)
+	{
+		cheque c;
+		c.get_cheque_details();
+		c.display();
+	}
+	else
+	{
+		cash d;
+		d.get_cash();
+		d.display();
+	}
+	return 0;
+}
