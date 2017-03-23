@@ -58,6 +58,53 @@ class bill
 	public:
 		void get_bill();
 };
+void bill::get_bill(){
+    cin >> item_price >> qty ;
+}
+class cheque:protected bill
+{
+    int cheque_number,amount,pending;
+public:
+    void get_cheque_details(){
+        get_bill();
+        cin >> cheque_number;
+        cin >> amount;
+    }
+    void display(){
+        bill = item_price*qty;
+        cout << bill << endl;
+        pending = bill - amount;
+        if(pending <= 0)
+            cout << "Clear" << endl;
+        else
+            cout << "Balance=" << pending << endl ;
+    }
+
+};
+class cash:protected bill
+{
+    int n1,n2,n3,n4,total;
+public:
+    void get_cash(){
+        cin >> item_price;
+        cin >> qty;
+        cin >> n1 >> n2 >> n3 >> n4;
+    }
+    void display() {
+        bill = item_price*qty;
+        n1 = n1*500;
+        n2 = n2*100;
+        n3 = n3*10;
+        n4 = n4*1;
+        total = n1+n2+n3+n4;
+        if(total >=bill){
+            cout << bill << endl;
+            cout << "Clear";}
+        else{
+            cout << bill << endl;
+            cout << "Balance=" << bill-total;}
+    }
+};
 int main()
 {
 	int n;
