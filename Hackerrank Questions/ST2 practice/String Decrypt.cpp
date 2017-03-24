@@ -21,6 +21,27 @@ class string1
         void show_string1();
         void decrypt( );
 };
+string1::string1(){len=0;}
+string1::~string1(){}
+string1::string1(char *s)
+{
+    int n= strlen(s);
+    str = new char[n];
+    strcpy(str,s);
+}
+void string1::show_string1()
+{
+    cout << str;
+}
+void string1::decrypt()
+{
+    int i;
+    while(str[i]!='\0')
+        {
+        str[i]-=3;
+        i++;
+    }
+}
 int main()
 {
 
