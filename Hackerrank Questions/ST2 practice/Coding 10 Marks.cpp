@@ -15,7 +15,15 @@ Raam
 #include<math.h>
 #include<string.h>
 using namespace std;
-
+class Result
+{
+    public:
+    Result(int rno,char *s,int *p){
+     cout << rno << endl;
+     cout << s << endl;
+     cout << p[0]+p[1]+p[2];
+    }
+};
 int main() {
     int rno,i;
     char name[20];
