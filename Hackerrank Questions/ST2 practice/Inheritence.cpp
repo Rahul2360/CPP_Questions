@@ -20,9 +20,40 @@ class Number
         Number(int x);
         int returnNumber();
 };
-
-
-
+Number::Number(int x)
+{
+    num=x;
+}
+class Square:public Number
+{
+    public:
+    Square(int x):Number(x){}
+        int getSquare(){
+        int i = returnNumber();
+            return i*i;
+    }
+};
+class Cube:public Number
+{
+    public:
+    Cube(int x):Number(x){}
+    int getCube(){
+        int j=returnNumber();
+        return j*j*j;
+    };
+};
+int Number::returnNumber()
+{
+    return num;
+}
+int main(){
+    int number;
+    cin >> number;
+    int sqr,cube;
+    Square square(number);
+    Cube cbe(number);
+    Square *objS=&square;
+    Cube *objC=&cbe;
         //sqr and cube are integer variables.
         sqr =objS->getSquare();//objS is a pointer of Square class
         cout << "Square of "<< objS->returnNumber() << " is: " << sqr  << endl;
