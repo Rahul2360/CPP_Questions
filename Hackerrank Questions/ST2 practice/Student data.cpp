@@ -13,7 +13,7 @@ Sample Output:
 CSE
 135 //total marks of all the three subjects*/
 
-#include <string>
+#include <string.h>
 #include <iostream>
 using namespace std;
 class student
@@ -24,11 +24,10 @@ char course[10];
 public:
 student(int rno,char *c)
 {
-roll_no=rno;
-strcpy(course, c);
+    roll_no=rno;
+    strcpy(course, c);
 }
 void show_rno();
-
 };
 class result: protected student
 {
