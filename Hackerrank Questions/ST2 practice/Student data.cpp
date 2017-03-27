@@ -12,29 +12,9 @@ Sample Output:
 23
 CSE
 135 //total marks of all the three subjects*/
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
-#include <unordered_map>
 
+#include <string>
+#include <iostream>
 using namespace std;
 class student
 {
@@ -51,17 +31,32 @@ void show_rno();
 
 };
 class result: protected student
-
-
+{
+    int total,m[3];
+    public:
+    result(int rno,char *c,int m1,int m2,int m3):student(rno,c){
+        m[1]=m1;
+        m[2]=m2;
+        m[3]=m3;
+        total = m[1]+m[2] +m[3];
+    }
+    void display(){
+        show_rno();
+        cout << total << endl;
+    }
+};
+void student::show_rno(){
+    cout << roll_no << endl << course << endl;
+}
 int main()
 {
-int rno,m1,m2,m3;
-char course[10];
-cin>>rno;
-cin.ignore();
-cin.getline(course,10);
-cin>>m1>>m2>>m3;
-result r(rno,course,m1,m2,m3);
-r.display();
-return 0;
+    int rno,m1,m2,m3;
+    char course[10];
+    cin>>rno;
+    cin.ignore();
+    cin.getline(course,10);
+    cin>>m1>>m2>>m3;
+    result r(rno,course,m1,m2,m3);
+    r.display();
+    return 0;
 }
