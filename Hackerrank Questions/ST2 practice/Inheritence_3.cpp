@@ -18,9 +18,25 @@ m
 cse
 dl
 4.5*/
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
 #include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <numeric>
 #include <iostream>
-#include <math>
+#include <algorithm>
 using namespace std;
 class basicInfo
 {
