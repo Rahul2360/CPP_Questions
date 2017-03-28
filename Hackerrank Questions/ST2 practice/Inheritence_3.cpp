@@ -40,8 +40,50 @@ class deptInfo
     public:
         deptInfo(char *n,char *a,int t);
 };
+basicInfo::basicInfo(char *n,int e,char g){
+    name = n;
+    empId = e;
+    gender = g;
+}
+deptInfo::deptInfo(char *dn,char *a ,int t){
+    deptName = dn;
+    assignedWork = a;
+    time2complete = t;
+}
+class employee:public basicInfo,public deptInfo
+{
+    public:
+    employee(char *n,int e,char g,char *dn,char *a,int t):basicInfo(n,e,g),deptInfo(dn,a,t){
 
-
+    }
+    void printEmployeeInfo(){
+        cout << name << endl;
+        cout << empId << endl;
+        cout << gender << endl;
+        cout << deptName << endl;
+        cout << assignedWork << endl;
+        cout << (float)time2complete/10 << endl;
+    }
+};
+int main()
+{
+    char n[100],dn[100],a[100],g;
+    int e,t;
+    cin.getline(n,100);
+    cin >> e >> g;
+    basicInfo ob1(n,e,g);
+    cin.ignore();
+    cin.getline(dn,100);
+    cin.getline(a,100);
+    cin >> t;
+    if(t>0);
+    else{
+        cout << "Wrong Input";
+        exit(0) ;}
+    deptInfo ob2(dn,a,t);
+    employee em(n,e,g,dn,a,t);
+    employee *emp;
+    emp = &em;
 emp->printEmployeeInfo();
 return 0;
 }
