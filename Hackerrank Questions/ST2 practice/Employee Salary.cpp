@@ -54,8 +54,42 @@ public:
 void get_emp_data();
 void show_emp_data();
 };
-
-
+void employee::get_emp_data(){
+    cin >> id;
+    cin.ignore();
+    cin.getline(name,20);
+    cin.getline(des,20);
+}
+void employee::show_emp_data(){
+    cout << id << endl;
+    cout << name << endl;
+    cout << des << endl;
+}
+class contract:public employee{
+    int working_hours,no_of_wages,salary;
+    public:
+    void get_cont_data(){
+        get_emp_data();
+        cin >> working_hours >> no_of_wages;
+        salary = working_hours*no_of_wages;
+    }
+    void show_cont_data(){
+        show_emp_data();
+        cout << salary << endl;
+    }
+};
+class permanent:public employee{
+    float HRA,TA,basic_pay,DA,total;
+    public:
+    void get_per_data(){
+        cin >> basic_pay >> HRA >> TA;
+        DA = 0.1*basic_pay;
+        total = basic_pay+basic_pay+ HRA + TA + DA ;
+    }
+    void show_per_data(){
+        cout << total;
+    }
+};
 int main()
 {
 contract c;
