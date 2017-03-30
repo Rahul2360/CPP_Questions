@@ -40,7 +40,34 @@ protected:
 public:
     void get_m();
 };
-
+void one::get_m(){
+    cin >> m;
+}
+class two
+{
+    public:
+    int n;
+    void get_n(){
+        cin >> n;
+    }
+};
+class last:public one,public two
+{
+    int product;
+    public:
+    void get_m(){
+        one::get_m();
+        cout << m << endl;
+    }
+    void get_n(){
+        two::get_n();
+        cout << n << endl;
+    }
+    void display(){
+        product = m*n;
+        cout << product;
+    }
+};
 int main() {
     last l;
     l.get_m();
