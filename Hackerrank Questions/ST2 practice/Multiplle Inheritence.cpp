@@ -9,18 +9,9 @@ Sample Output:
 33
 44
 1452 //product of two nos*/
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
+
+
+
 #include <vector>
 #include <climits>
 #include <cstring>
@@ -30,13 +21,13 @@ Sample Output:
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include <unordered_map>
+
 
 using namespace std;
 class one
 {
 protected:
-    int m
+    int m;
 public:
     void get_m();
 };
