@@ -1,4 +1,4 @@
-Consider a class named Base having its data members as name and its roll number.A another class named Internal inherits this
+/*Consider a class named Base having its data members a name and its roll number.A another class named Internal inherits this
 class in public mode and having its data members as 4 subject marks as internal.Their is an independent class named External
 having external marks of 4 subjects.The last class named Complete_Info being derived from External and Internal, calculates the
 total of internal marks obtained by student as well as sum of external marks and grand total.
@@ -39,4 +39,37 @@ EXTERNAL MARKS IN FOUR SUBJECTS
 4
 Output contains
 Name Roll_no Total _internal_ marks Total _external_ marks Total_marks Grade
-Note: All elements in output are separated by space
+Note: All elements in output are separated by space*/
+#include <iostream>
+using namespace std;
+
+class Base
+{
+   public:
+      char *name;
+      int roll;
+      void get();
+};
+
+class Internal: public Base
+{
+    public:
+    int M1, M2,M3,M4;
+    void getIMarks();
+     };
+class External
+{
+    public:
+    int E1, E2,E3,E4;
+    void getEMarks();
+};
+
+int main(void)
+{
+  Complete_Info c;
+  c.get();
+  c.getIMarks();
+  c.getEMarks();
+  c.Display();
+   return 0;
+}
