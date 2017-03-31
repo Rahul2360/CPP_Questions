@@ -63,7 +63,47 @@ class External
     int E1, E2,E3,E4;
     void getEMarks();
 };
-
+void Base::get(){
+    name = new char[100];
+    cin >> name;
+    cin >> roll;
+}
+void Internal::getIMarks(){
+    cin >> M1 >> M2 >> M3 >> M4;
+}
+void External::getEMarks(){
+    cin >> E1 >> E2 >> E3 >> E4;
+}
+class Complete_Info:public Internal,public External
+{
+    char grade;
+    int total_internal_marks;
+    int total_external_marks,total;
+    public:
+    void get(){
+        Base::get();
+    }
+    void getIMarks(){
+        Internal::getIMarks();
+        total_internal_marks = M1+M2+M3+M4;
+    }
+    void getEMarks(){
+        External::getEMarks();
+        total_external_marks = E1+E2+E3+E4;
+    }
+    void Display(){
+        total = total_internal_marks + total_external_marks;
+        if(total<=40)
+            grade = 'R';
+        else if(total>40 && total<=60)
+            grade = 'C';
+        else if(total>60 && total<=80)
+            grade = 'B';
+        else
+            grade = 'A';
+        cout << name << " " << roll << " " << total_internal_marks << " " << total_external_marks << " " << total << " " << grade;
+    }
+};
 int main(void)
 {
   Complete_Info c;
