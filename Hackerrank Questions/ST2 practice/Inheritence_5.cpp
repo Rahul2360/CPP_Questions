@@ -47,6 +47,36 @@ class seller :public customer
     void caldiscount();
     void show();
 };
+void customer::input()
+{
+    cin >> c_no;
+    cin.ignore();
+    cin.getline(name,20);
+    cin >> qty;
+    cin >> price;
+}
+void seller::caldiscount()
+{
+    input();
+    total_price =(float)(price * qty);
+    if(total_price >= 50000)
+        discount = 0.25 * total_price;
+    else if(total_price >= 25000 && total_price < 50000)
+        discount = 0.15 * total_price;
+    else
+        discount = 0.1 * total_price;
+    net_price = total_price - discount;
+}
+void seller::show()
+{
+    cout << c_no << endl;
+    cout << name << endl;
+    cout << qty << endl;
+    cout << price << endl;
+    cout << total_price << endl;
+    cout << discount << endl;
+    cout << net_price << endl;
+}
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     seller ob;
