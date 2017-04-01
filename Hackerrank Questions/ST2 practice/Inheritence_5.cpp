@@ -1,4 +1,4 @@
-Define a class Customer with the following specifications.
+/*Define a class Customer with the following specifications.
 Protected Members :
 Customer_no integer
 Customer_name char ﴾20﴿
@@ -25,4 +25,32 @@ Sample output:
 100
 1000 //total price=quantity*price
 100 //discount
-900 // Net‐price
+900 // Net‐price*/
+#include <iostream>
+using namespace std;
+class customer
+    {
+    protected:
+    int c_no;
+    char name[20];
+    int qty;
+    int price;
+    float discount;
+    float net_price;
+    public:
+    void input();
+};
+class seller :public customer
+    {
+    public:
+    float total_price;
+    void caldiscount();
+    void show();
+};
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    seller ob;
+    ob.caldiscount();
+    ob.show();
+    return 0;
+}
