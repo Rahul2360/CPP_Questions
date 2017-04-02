@@ -38,12 +38,42 @@ class beneficiary:public emp
     void transfer();
     void print();
 };
-
+void emp::get_data()
+{
+    cin >> acc_no;
+    cin >> balance;
+}
+void emp::display()
+{
+    //cout << acc_no << endl;
+    //cout << balance << endl;
+}
+void beneficiary::get_b_data()
+{
+    get_data();
+    cin >> b_accno;
+    cin >> b_bal;
+    cin >> amt;
+}
+void beneficiary::transfer()
+{
+    if(amt<=balance){
+        balance = balance - amt;
+        b_bal = b_bal + amt ;}
+    else
+        cout << "Insuffient balance" << endl;
+}
+void beneficiary::print()
+{
+    cout << acc_no << endl;
+    cout << balance << endl;
+    cout << b_accno << endl;
+    cout << b_bal << endl;;
+}
 int main()
 {
     beneficiary ob;
     ob.get_b_data();
     ob.transfer();
     ob.print();
-
 }
