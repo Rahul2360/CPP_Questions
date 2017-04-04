@@ -45,7 +45,53 @@ notes=3
 using namespace std;
 class bill
 {
+     public:
+    int item_code, price,total=0;
+    void get(){
+        cin >> item_code >> price;
+        total+=price;
+    }
+};
+class cash:public bill
+{
+    public:
+    int deno[100],value[100],num;
+    public:
+    void get_data(){
+        get();
+    }
+    cash(){}
+    cash(int c,int p,int d[],int v[],int num):bill(){
 
+    }
+    void show_cash(){
+        cout << total << endl;
+        cout << "notes=" << num << endl;
+        for(int i=0;i<num;i++)
+            cout << deno[i] << endl << value[i] << endl;
+    }
+};
+class cheque:public bill
+{
+    public:
+    int chec_no,bank_name;
+    void get_data(){
+        get();
+    }
+    void show_check(){
+
+    }
+    cheque(int c,int p,int c_num,char *name){}
+};
+int main()
+{
+    int option,p;
+    cash ob1;
+    int c;
+    cin >> c;
+    for(int i=0;i<c;i++)
+       ob1.get_data();
+    cin >> option;
 if(option==1)
     {
         char name[30];
