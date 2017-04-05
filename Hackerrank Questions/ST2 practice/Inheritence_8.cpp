@@ -1,4 +1,4 @@
-There are three classes, your work is to display according to the choice option 1 is for ﴾address+room﴿ details, option 2 is
+/*There are three classes, your work is to display according to the choice option 1 is for ﴾address+room﴿ details, option 2 is
 for﴾house+room﴿ details for only 3 rooms not more or less than that.
 Class room: Data members are Length, Breadth, Height
 Class address: Data members are HouseNo, City, State
@@ -62,4 +62,27 @@ Height=23
 Room Details=3
 Length=31
 Breath=32
-Height=33
+Height=33*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int option;
+    //cout<<"enter 1 for (address+room) and 2 for (house+room)"<<endl;
+     cin>>option;
+     if(option==1)
+     {
+	address a;
+	a.input();
+	a.display();
+     }
+     if(option==2)
+     {
+         house h;
+         h.input();
+         h.display();
+     }
+	return 0;
+}
