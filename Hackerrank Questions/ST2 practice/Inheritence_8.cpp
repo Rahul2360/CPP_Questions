@@ -64,8 +64,60 @@ Length=31
 Breath=32
 Height=33*/
 #include <iostream>
-
 using namespace std;
+class room
+{
+    int Length[3],Breadth[3],Height[3];
+    public:
+    void get_data(){
+        for(int i=0;i<3;i++)
+            cin >> Length[i] >> Breadth[i] >> Height[i];
+    }
+    void show_data(){
+        for(int i=0;i<3;i++){
+            cout << "Room Details=" << i+1 << endl;
+            cout << "Length=" << Length[i] << endl;
+            cout << "Breath=" << Breadth[i] << endl;
+            cout << "Height=" << Height[i] << endl;
+        }
+    }
+
+};
+class address:public room
+{
+    int HouseNo;
+    char City[100],State[100];
+    public:
+    void input(){
+        cin >> HouseNo;
+        cin.ignore();
+        cin.getline(City,100);
+        cin.getline(State,100);
+        get_data();
+    }
+    void display(){
+        cout << "House No=" << HouseNo << endl;
+        cout << "City=" << City << endl;
+        cout << "State=" << State << endl;
+        cout << "Address is:" << endl;
+        show_data();
+    }
+};
+class house:public room
+{
+    char HouseName[100];
+    public:
+    void input(){
+        cin.ignore();
+        cin.getline(HouseName,100);
+        get_data();
+    }
+    void display(){
+        cout << "House name=" << HouseName << endl;
+        cout << "Address is:" << endl;
+        show_data();
+    }
+};
 
 int main()
 {
