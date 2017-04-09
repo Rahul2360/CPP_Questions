@@ -5,13 +5,11 @@ class shape
 protected:
     int width,height;
 public:
-    shape(int a=0, int b=0)
-    {
+    shape(int a=0, int b=0){
         width=a;
         height=b;
     }
-    int area()
-    {
+    int area(){
         cout << "Parent class area" << endl;
         return 0;
     }
@@ -19,12 +17,8 @@ public:
 class rectangle:public shape
 {
 public:
-    rectangle(int a=0, int b=0):shape(a,b)
-    {
-
-    }
-    int area()
-    {
+    rectangle(int a=0, int b=0):shape(a,b){}
+    int area(){
         cout << "Rectangle class area" << endl;
         return (width*height);
     }
@@ -32,10 +26,7 @@ public:
 class triangle:public shape
 {
 public:
-    triangle(int a=0,int b=0):shape(a,b)
-    {
-
-    }
+    triangle(int a=0,int b=0):shape(a,b){}
     int area()
     {
         cout << "Triangle class area";
